@@ -1,22 +1,40 @@
 <div class="app-container">
-  <h1 class="app-title">Componet Part 1 Exercise</h1>
+  <app-weather>
+    <app-weather-top-bar ngProjectAs="topBar"/>
 
-  <div class="task-one ">
-    <h2>Exercise 1</h2>
+    <app-weather-content class="content"/>
 
-    <div class="exercise-one">
-      <h3>1.1: Hello Badge</h3>
-      <app-hello-badge/>
-    </div>
+    <app-weather-bottom-detail slot="bottomDetails"/>
+  </app-weather>
+  <br/>
 
-    <div class="exercise-one">
-      <h3>1.2: Clock Display</h3>
-      <app-clock-display/>
-    </div>
 
-    <div class="exercise-one">
-      <h3>1.3: Random Quote Box</h3>
-      <app-quote-box/>
-    </div>
+  <!-- <div *ngIf="isVisible; else hiddenContent">
+    <h2>Test Template</h2>
   </div>
+  <ng-template #hiddenContent>
+    <p>Hidden Content</p>
+  </ng-template>
+  <button (click)="isVisible = !isVisible" class="toggle-button">
+    Toggle Visibility
+  </button> -->
+
+
+  <ng-container *ngIf="isLoggedIn; else notLoggedIn">
+
+  <h2>Welcome!</h2>
+
+  <p>You are logged in.</p>
+
+  <button (click)="isLoggedIn = false">Logout</button>
+
+</ng-container>
+
+<ng-template #notLoggedIn>
+
+  <h2>Please log in.</h2>
+
+  <button (click)="isLoggedIn = true">Login</button>
+
+</ng-template>
 </div>

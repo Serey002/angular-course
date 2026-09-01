@@ -1,12 +1,15 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { HelloBadgeComponent } from './componentsTask1/hello-badge/hello-badge.component';
-import { ClockDisplayComponent } from "./componentsTask1/clock-display/clock-display.component";
-import { QuoteBoxComponent } from "./componentsTask1/quote-box/quote-box.component";
-
+import { WeatherComponent } from './components/weather/weather.component';
+import { WeatherContentComponent } from './components/weather-content/weather-content.component';
+import { WeatherTopBarComponent } from './components/weather-top-bar/weather-top-bar.component';
+import { WeatherBottomDetailComponent } from './components/weather-bottom-detail/weather-bottom-detail.component';
 @Component({
   selector: 'app-root',
-  imports: [HelloBadgeComponent, ClockDisplayComponent, QuoteBoxComponent],
+  imports: [NgIf, WeatherComponent, WeatherContentComponent, WeatherTopBarComponent, WeatherBottomDetailComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {}
+export class App {
+  isLoggedIn = true;
+}

@@ -28,13 +28,33 @@
 
   <button (click)="isLoggedIn = false">Logout</button>
 
-</ng-container>
+  </ng-container>
 
-<ng-template #notLoggedIn>
+  <ng-template #notLoggedIn>
 
-  <h2>Please log in.</h2>
+    <h2>Please log in.</h2>
 
-  <button (click)="isLoggedIn = true">Login</button>
+    <button (click)="isLoggedIn = true">Login</button>
 
-</ng-template>
+  </ng-template>
+  <br>
+
+
+
+  <ng-template #burgerTemplate>
+    <h2>Burger Menu</h2>
+    <p>Here is the content of the burger menu.</p>
+    <strong>$5.99</strong>
+  </ng-template>
+  <ng-template #pizzaTemplate>
+    <h2>Pizza Menu</h2>
+    <p>Here is the content of the pizza menu.</p>
+    <strong>$8.99</strong>
+  </ng-template>
+  <ng-container #container></ng-container>
+  <br>
+  <button (click)="showBurger()">Show Burger Menu</button>
+  <br>
+  <button (click)="showPizza()">Show Pizza Menu</button>
+
 </div>

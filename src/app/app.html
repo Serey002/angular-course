@@ -1,3 +1,24 @@
 <div class="app-container">
   <h1 class="app-title">Component Lifecycle</h1>
+  <br>
+  <div class="lifecycle-container">
+    <h2>NgOnInit</h2>
+    <app-ng-on-init/>
+  </div>
+
+  <br>
+
+  <div class="lifecycle-container">
+    <h2>NgOnChanges</h2>
+    <app-ng-on-changes [foodName]="foodName"></app-ng-on-changes>
+    <button (click)="changeFoodName()">Change Food</button>
+  </div>
+
+  <div class="lifecycle-container">
+    <h2>NgOnChanges</h2>
+    <app-ng-on-changes [foodName]="foodName"></app-ng-on-changes>
+    <button (click)="changeFoodName()">Change Food</button>
+  </div>
 </div>
+
+

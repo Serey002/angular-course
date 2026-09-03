@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
-import { HelloBadgeComponent } from './componentsTask1/hello-badge/hello-badge.component';
-import { ClockDisplayComponent } from "./componentsTask1/clock-display/clock-display.component";
-import { QuoteBoxComponent } from "./componentsTask1/quote-box/quote-box.component";
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { FoodDetailsComponent } from './food-details/food-details.component';
+import { OrderFormComponent } from './order-form/order-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [HelloBadgeComponent, ClockDisplayComponent, QuoteBoxComponent],
+  imports: [FoodDetailsComponent, OrderFormComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {}
+export class App {
+
+  @ViewChild('containers', { read: ViewContainerRef})
+  container!: ViewContainerRef;
+
+  showFoodDatails() {
+    this.container.createComponent(FoodDetailsComponent);
+  }
+
+  showOrderForm() {
+    this.container.clear()
+    this.container.createComponent(OrderFormComponent)
+  }
+
+  clearForm() {
+    this.container.clear()
+  }
+}

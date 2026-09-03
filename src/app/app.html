@@ -1,22 +1,22 @@
 <div class="app-container">
-  <h1 class="app-title">Componet Part 1 Exercise</h1>
+  <h1 class="app-title">Componet Part 2</h1>
+  <br>
+  <br>
 
-  <div class="task-one ">
-    <h2>Exercise 1</h2>
+  <h1>Food Application</h1>
+  <br>
+  <ng-container #containers></ng-container>
+  <button (click)="showFoodDatails()">
+    Show Food Details
+  </button>
 
-    <div class="exercise-one">
-      <h3>1.1: Hello Badge</h3>
-      <app-hello-badge/>
-    </div>
+  <button (click)="showOrderForm()">
+    Order Form
+  </button>
 
-    <div class="exercise-one">
-      <h3>1.2: Clock Display</h3>
-      <app-clock-display/>
-    </div>
+  <button (click)="clearForm()" class="clearForm">
+    Clear All Form
+  </button>
 
-    <div class="exercise-one">
-      <h3>1.3: Random Quote Box</h3>
-      <app-quote-box/>
-    </div>
-  </div>
+
 </div>

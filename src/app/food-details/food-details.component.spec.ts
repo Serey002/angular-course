@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { QuoteBoxComponent } from './quote-box.component';
+import { FoodDetailsComponent } from './food-details.component';
 
-describe('QuoteBoxComponent', () => {
-  let component: QuoteBoxComponent;
-  let fixture: ComponentFixture<QuoteBoxComponent>;
+describe('FoodDetailsComponent', () => {
+  let component: FoodDetailsComponent;
+  let fixture: ComponentFixture<FoodDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [QuoteBoxComponent],
+      imports: [FoodDetailsComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(QuoteBoxComponent);
+    fixture = TestBed.createComponent(FoodDetailsComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

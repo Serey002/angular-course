@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ClockDisplayComponent } from './clock-display.component';
+import { OrderFormComponent } from './order-form.component';
 
-describe('ClockDisplayComponent', () => {
-  let component: ClockDisplayComponent;
-  let fixture: ComponentFixture<ClockDisplayComponent>;
+describe('OrderFormComponent', () => {
+  let component: OrderFormComponent;
+  let fixture: ComponentFixture<OrderFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClockDisplayComponent],
+      imports: [OrderFormComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ClockDisplayComponent);
+    fixture = TestBed.createComponent(OrderFormComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

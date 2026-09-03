@@ -8,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgOnInitComponent implements OnInit {
 
+  foods: { id: number; name: string; price: number }[] = [];
 
   ngOnInit(): void {
-    console.log('ngOnInit initialized');
+    this.loadFoods();
+    console.log("Food initialized")
+  }
+
+  loadFoods() {
+    this.foods = [
+      {
+        id: 1,
+        name: 'Burger',
+        price: 8.99
+      },
+      {
+        id: 2,
+        name: 'Pizza',
+        price: 10.99
+      }
+    ];
   }
 
 }

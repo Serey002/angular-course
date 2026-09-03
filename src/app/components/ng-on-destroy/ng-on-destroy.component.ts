@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './ng-on-destroy.component.css',
   templateUrl: './ng-on-destroy.component.html',
 })
-export class NgOnDestroyComponent {}
+export class NgOnDestroyComponent implements OnDestroy {
+  ngOnDestroy(): void {
+      console.log("")
+  }
+}

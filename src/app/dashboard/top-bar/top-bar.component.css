@@ -1,0 +1,14 @@
+.top-bar {
+  background-color: #f5f5f5;
+  padding: 10px;
+  /* text-align: center; */
+}
+.top-bar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.top-bar-description {
+  font-size: 1rem;
+  color: #666;
+}

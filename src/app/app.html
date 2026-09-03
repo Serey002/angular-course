@@ -1,6 +1,6 @@
 <div class="app-container">
   <h1 class="app-title">Componet Part 1 Exercise</h1>
-
+  <br>
   <div class="task-one ">
     <h2>Exercise 1</h2>
 
@@ -8,15 +8,111 @@
       <h3>1.1: Hello Badge</h3>
       <app-hello-badge/>
     </div>
-
+    <br>
     <div class="exercise-one">
       <h3>1.2: Clock Display</h3>
       <app-clock-display/>
     </div>
-
+    <br>
     <div class="exercise-one">
       <h3>1.3: Random Quote Box</h3>
       <app-quote-box/>
     </div>
   </div>
+
+  <br>
+  <br>
+
+  <div class="task-two">
+    <h2>Exercise 2</h2>
+    <h3>2.1: Header + Footer Shell</h3>
+  <div class="exercise-two">
+    <app-header/>
+  </div>
+
+  <br>
+  <div class="exercise-two">
+    <app-footer/>
+  </div>
+
+  <br>
+  <br>
+  <h3>2.2: Dashboard Layout</h3>
+  <div class="exercise-two">
+    <app-dashboard/>
+  </div>
+
+
+  <br>
+  <h3>2.3: Reusable Card Grid</h3>
+  <div class="exercise-two">
+    <app-stats-grid/>
+  </div>
+
+  <br>
+  <br>
+  <h2>Task 3 — @Input (parent → child data)</h2>
+  <h3>3.1: Greeting with Name</h3>
+  <app-hello-badge [name]="'Alice'"></app-hello-badge>
+
+  <app-hello-badge [name]="'Bob'"></app-hello-badge>
+
+  <app-hello-badge [name]="'Charlie'"></app-hello-badge>
+
+  <br>
+  <h2>3.2 — Product Price Tag</h2>
+  <div *ngFor="let product of products">
+
+    <h3>{{ product.name }}</h3>
+
+    <app-price-tag
+      [price]="product.price"
+      [currency]="product.currency">
+    </app-price-tag>
+
+  </div>
+
+  <br>
+  <h2>3.3: Progress Bar with Validation</h2>
+  <h2>Progress Examples</h2>
+  <p>Normal value:</p>
+  <app-progress-bar [percent]="50"></app-progress-bar>
+
+  <p>Low value:</p>
+  <app-progress-bar [percent]="25"></app-progress-bar>
+
+  <p>100%:</p>
+  <app-progress-bar [percent]="100"></app-progress-bar>
+
+  <p>Too low:</p>
+  <app-progress-bar [percent]="-10"></app-progress-bar>
+
+  <p>Too high:</p>
+  <app-progress-bar [percent]="150"></app-progress-bar>
+
+
+  <br>
+  <br>
+  <h2>Task 4 — @Output (child → parent events)</h2>
+  <h3>4.1: Like Button</h3>
+  <p>Number of like: {{likeCount}}</p>
+  <app-like-button (liked)="onLiked()"/>
+
+  <br>
+  <br>
+  <h3>4.2: Rating Selector</h3>
+  <app-star-rating (ratingSelected)="onRating($event)"/>
+
+  <br>
+  <br>
+  <h3>4.3: Editable List Item (Input + Output combined)</h3>
+  <p><b>My todo list</b></p>
+  <div *ngFor="let todo of todos">
+    <app-todo-item [id]="todo.id" [text]="todo.text" (remove)="onRemove($event)">
+    </app-todo-item>
+  </div>
+
+
+
+
 </div>

@@ -1,0 +1,4 @@
+<div class="stars">
+  <button *ngFor="let star of [1,2,3,4,5]" (click)="selectRating(star)"
+  [class.selected]="star <= selectedRating">★</button>
+</div>

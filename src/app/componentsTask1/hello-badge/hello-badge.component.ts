@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './hello-badge.component.css',
   templateUrl: './hello-badge.component.html',
 })
-export class HelloBadgeComponent {}
+export class HelloBadgeComponent {
+  @Input() name = 'stranger';
+}

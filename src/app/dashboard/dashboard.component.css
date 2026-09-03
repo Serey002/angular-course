@@ -1,0 +1,12 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100vh;
+}
+
+.main-area {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  min-height: 0;
+}

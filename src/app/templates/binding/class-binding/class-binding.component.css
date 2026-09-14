@@ -1,0 +1,23 @@
+.available {
+  width: 100px;
+  border: 2px solid green;
+}
+
+.popular{
+  background: #3175cd;
+  color: white;
+}
+
+.cheap {
+  color: green;
+}
+
+.expensive {
+  color: red;
+}
+
+
+.availableFood{
+  width: 500px;
+  border: 2px solid green;
+}

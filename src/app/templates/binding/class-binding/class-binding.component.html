@@ -1,0 +1,25 @@
+<h2><b>Class Binding</b></h2>
+<div [class.available]="isVailable">
+  <h2>{{foodName}}</h2>
+  <p>Available</p>
+</div>
+<br>
+
+<p>Multiple Class Binding</p>
+<div [class.available]="isVailable" [class.popular]="isPopular" [class.discount]="isDiscounted">
+  <h2>Kary Khmer Noodle</h2>
+</div>
+<br>
+
+<p>Class Binding with an Expression</p>
+<div>
+  <p [class.cheap]="price < 10">$Cheap: {{price}}</p>
+  <p [class.expensive]="price > 10">Exspansive: ${{price}}</p>
+</div>
+<br>
+
+<p>Class Binding is Boolean</p>
+<div [class.availableFood]="isAvailableFood">
+  <h2>{{foodName2}}</h2>
+  <p>This is food Available</p>
+</div>

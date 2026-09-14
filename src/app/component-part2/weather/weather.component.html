@@ -1,12 +1,13 @@
 <div class="max-w-sm rounded-3xl bg-gradient-to-br from-blue-500 to-indigo-600 p-6 text-white shadow-xl">
 
-  <ng-content select="topBar"/>
 
   @if (!hidden()) {
     <ng-content select=".content">
       <p class="text-center text-lg font-medium p-6">No content provided...</p>
     </ng-content>
   }
+
+  <ng-content select="topBar"/>
 
   <ng-content select="[slot='bottomDetails']"/>
 

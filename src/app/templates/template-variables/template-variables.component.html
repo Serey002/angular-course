@@ -1,0 +1,20 @@
+
+<!-- Template Variable Can Refer to Other Elements -->
+<br>
+<h2 #foodButton>Order</h2>
+<p>{{foodButton.innerText}}</p>
+<br>
+
+
+<br>
+<h2>Food Order</h2>
+<input type="text" placeholder="Food name" #foodinput>
+<input type="number" placeholder="Quantity" #quantityInput>
+<br>
+<button (click)="orderFood(foodinput.value, +quantityInput.value)">Order Food</button>
+
+<p>Food Name: <b>{{foodinput.value}}</b></p>
+<p>Quantity: <b>{{quantityInput.value}}</b></p>
+<br>
+
+

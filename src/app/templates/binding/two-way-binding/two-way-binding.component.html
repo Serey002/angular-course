@@ -1,0 +1,16 @@
+<p><b>Two-way Binding</b></p>
+
+<p>Gitting the input value</p>
+<input [(ngModel)]="textValue" placeholder="input">
+<p>Value from input: {{textValue}}</p>
+
+<br>
+<p>Two-way Binding with Checkbox</p>
+<input type="checkbox" [(ngModel)]="isAvailable">
+<p>Available: {{ isAvailable }}</p>
+
+<br>
+<br>
+<p>Two-way Binding with component</p>
+<p>Parent food: {{ foodName }}</p>
+<app-between-component [(foodName)]="foodName"></app-between-component>

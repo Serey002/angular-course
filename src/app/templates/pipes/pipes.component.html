@@ -1,0 +1,22 @@
+<p><b>My name is {{name}}</b></p>
+<p><b>My name is {{name | uppercase}}</b></p>
+<p><b>My name is {{name | lowercase}}</b></p>
+<p>Age: {{price | currency}}</p>
+<p>Age: {{price | currency: 'USD': 'symbol': '4.4-4'}}</p>
+
+<p>{{myself | json}}</p>
+
+<p>Currently Date <b>{{currentDate | date: 'MMMM,dd-mm-yyyy'}}</b></p>
+<p>Full date Date <b>{{currentDate | date: 'fullDate'}}</b></p>
+<p>Time: <b>{{currentDate | date: 'shortTime'}}</b></p>
+
+<br>
+<p>KeyValuePipe</p>
+<ul>
+  @for (item of users | keyvalue; track item.key) {
+    <li><b>{{item.key}}</b> {{item.value}}</li>
+  }
+</ul>
+
+
+

@@ -1,0 +1,11 @@
+input{
+  border: solid blue 2px;
+}
+
+button{
+  background: #1c95ff;
+  color: white;
+  padding: 4px 30px;
+  margin-top: 10px;
+  border-radius: 4px;
+}

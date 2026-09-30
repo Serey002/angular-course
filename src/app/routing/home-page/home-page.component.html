@@ -1,0 +1,18 @@
+<p>Welcome to Home page</p>
+<button routerLink="/about" class="cursor-pointer p-3 bg-blue-500 text-white rounded-sm">About page</button>
+<br>
+<br>
+
+
+@for (account of accounts; track account.accountNumber) {
+
+  <div>
+    <span>{{ account.accountNumber }}</span>
+    <span>${{ account.balance }}</span>
+
+    <a [routerLink]="['/accounts', account.accountNumber]">
+      View
+    </a>
+  </div>
+
+}

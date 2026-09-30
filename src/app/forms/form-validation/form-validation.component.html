@@ -1,0 +1,81 @@
+<form [formGroup]="accountForm" (ngSubmit)="submitAccount()">
+  <div class="bank-acc">
+    <div class="acc-num">
+      <label for="accountNumber">Account Number</label>
+      <input id="accountNumber" type="text" formControlName="accountNumber"
+        (input)="onAccountNumberInput($event)"
+      >
+      <p class="error" [class.visible]="accountForm.controls.accountNumber.invalid && accountForm.controls.accountNumber.touched">
+        @if (accountForm.controls.accountNumber.hasError('required')) {
+          Account number is required.
+        } @else {
+          Account number must be exactly 6 characters.
+        }
+      </p>
+    </div>
+
+    <div class="acc-num">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email">
+      <p class="error" [class.visible]="accountForm.controls.email.invalid && accountForm.controls.email.touched">
+        @if (accountForm.controls.email.hasError('required')) {
+          Email is required.
+        } @else {
+          Enter a valid email address.
+        }
+      </p>
+    </div>
+
+    <div class="acc-num">
+      <label for="accountName">Account Name</label>
+      <input id="accountName" type="text" formControlName="accountName">
+      <p class="error" [class.visible]="accountForm.controls.accountName.invalid && accountForm.controls.accountName.touched">
+        @if (accountForm.controls.accountName.hasError('required')) {
+          Account name is required.
+        } @else {
+          Account name must be 3 to 20 characters.
+        }
+      </p>
+    </div>
+    <div class="acc-num">
+      <label for="balance">Balance</label>
+      <input id="balance" type="number" formControlName="balance">
+      <p class="error" [class.visible]="accountForm.controls.balance.invalid && accountForm.controls.balance.touched">
+        @if (accountForm.controls.balance.hasError('required')) {
+          Balance is required.
+        } @else {
+          Balance must be between 0 and 100,000.
+        }
+      </p>
+    </div>
+
+    <div class="acc-num">
+      <label for="Beneficiaries">Beneficiary</label>
+      <div formArrayName="beneficiaries">
+        @for (beneficiary of beneficiaries.controls; track $index; let i = $index) {
+          <div>
+            <input type="text" [formControlName]="i" placeholder="Beneficiary name">
+            @if (beneficiary.invalid && beneficiary.touched) {
+              <p class="error visible">Beneficiary name is required.</p>
+            }
+            <button type="button" id="remove-beneficiary" (click)="removeBeneficiaries(i)">Remove</button>
+            <br>
+          </div>
+        }
+        <br>
+        <button type="button" id="add-beneficiary" (click)="addBeneficiaries()">Add Beneficiary</button>
+      </div>
+    </div>
+  </div>
+<div class="display">
+  <p>Account Name: {{ accountForm.value.accountName}}</p>
+  <p>Email: {{accountForm.value.email}}</p>
+  <p>Account Number: {{ accountForm.value.accountNumber }}</p>
+  <p>Balance: {{ accountForm.value.balance }}</p>
+  <pre>{{ accountForm.value | json}}</pre>
+  <div>
+    <button type="button" id="set-value" (click)="fillData()">Fill Data</button>
+    <button type="submit" id="submit">Create Account</button>
+  </div>
+</div>
+</form>

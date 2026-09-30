@@ -1,0 +1,42 @@
+<form [formGroup]="accountForm">
+  <div class="bank-acc">
+    <div class="acc-num">
+      <label for="AccountNumber">Account Number</label>
+      <input type="number" formControlName="accountNumber">
+    </div>
+    <div class="acc-num">
+      <label for="AccountName">Account Name</label>
+      <input type="text" formControlName="accountName">
+    </div>
+    <div class="acc-num">
+      <label for="Balance">Balance</label>
+      <input type="number" formControlName="balance">
+    </div>
+    <div class="acc-num">
+      <label for="Beneficiaries">Beneficiary</label>
+      <div formArrayName="beneficiaries">
+        @for (beneficiary of beneficiaries.controls; track $index; let i = $index) {
+          <div>
+            <input type="text" [formControlName]="i" placeholder="Beneficiary name">
+            <button id="remove-beneficiary" (click)="removeBeneficiaries(i)">Remove</button>
+            <br>
+          </div>
+        }
+        <br>
+        <button id="add-beneficiary" (click)="addBeneficiaries()">Add Beneficiary</button>
+      </div>
+    </div>
+  </div>
+</form>
+<br>
+
+<div class="display">
+  <p>Account Name: {{ accountForm.value.accountName }}</p>
+  <p>Account Number: {{ accountForm.value.accountNumber }}</p>
+  <p>Balance: {{ accountForm.value.balance }}</p>
+  <pre>{{ accountForm.value | json}}</pre>
+  <div>
+    <button id="set-value" (click)="fillData()">Fill Data</button>
+    <button id="submit" (click)="submitAccount()" >Create Account</button>
+  </div>
+</div>

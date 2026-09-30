@@ -1,0 +1,25 @@
+<h1 class="bg-blue-500 font-bold text-white"><b>Directive</b></h1>
+<br>
+
+<h1 class="font-bold text-blue-600"><b>Built-In Directive</b></h1>
+<app-built-in-directive/>
+
+<br>
+<h1 class="font-bold text-blue-600"> <b>Attribute Directive</b></h1>
+<app-attribute-directive/>
+
+<br>
+<h1 class="font-bold text-blue-600"> <b>Structural Directive</b></h1>
+<app-structural-directive/>
+
+<br>
+<h1 class="font-bold text-blue-600"> <b>Custom Directive</b></h1>
+<h2>Bank Account</h2>
+@for (account of accounts; track account.accountNumber) {
+  <div appCustomDirective [appAccountStatus]="account.status" class="card mt-2">
+    <h4>Account Number: {{ account.accountNumber }}</h4>
+    <p>Balance: ${{ account.balance }}</p>
+    <p>Status: {{ account.status }}</p>
+  </div>
+}
+<br>

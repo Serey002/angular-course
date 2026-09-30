@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #334155;
+}
+
+/* Header */
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Detail list items */
+p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75rem 0;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+p:not(:last-child) {
+  border-bottom: 1px dashed #f1f5f9;
+}
+
+/* Labels */
+strong {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Empty state message */
+p:only-child {
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  margin: 1rem 0;
+  border: none;
+}

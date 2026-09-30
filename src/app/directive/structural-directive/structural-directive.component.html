@@ -1,0 +1,59 @@
+<div>
+  <h2>@ if, @ else if, @ else </h2>
+  @if (accountStatus === 'ACTIVE') {
+    <p>Account is active.</p>
+  } @else if (accountStatus === 'BLOCKED') {
+    <p>Account is blocked.</p>
+  } @else {
+    <p> Account is closed. </p>
+  }
+</div>
+
+<br>
+<hr>
+
+<h2>@ for and @ empty</h2>
+<div class="forWithif">
+    @for (account of accounts; track account.accountNumber) {
+      <div class="card">
+          <h3 id="accountNumber">{{ account.accountNumber }}</h3>
+          <p id="balance">Balance: ${{ account.balance }}</p>
+          <p id="status">Status: {{ account.status }}</p>
+          @if (account.status === 'ACTIVE') {
+              <button id="deposit">Deposit</button>
+              <button id="withdraw">Withdraw</button>
+          }
+          @if (account.status === 'BLOCKED') {
+              <p id="isTransaction">Transactions are disabled.</p>
+          }
+      </div>
+    } @empty {
+        <p>No acounts found.</p>
+      }
+</div>
+
+
+  <br>
+  <hr>
+<div>
+  <h2>@Switch</h2>
+  @switch (accountStatus) {
+
+    @case ('ACTIVE') {
+      <p>Account is active.</p>
+    }
+
+    @case ('BLOCKED') {
+      <p>Account is blocked.</p>
+    }
+
+    @case ('CLOSED') {
+      <p>Account is closed.</p>
+    }
+
+    @default {
+      <p>Unknown status.</p>
+    }
+  }
+</div>
+

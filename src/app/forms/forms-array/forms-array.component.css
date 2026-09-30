@@ -1,0 +1,227 @@
+/* Container styling */
+.bank-acc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 480px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Field row layout */
+.acc-num {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+/* Label styling */
+.acc-num label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Input field styling */
+.acc-num input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.95rem;
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover & Focus states */
+.acc-num input:hover {
+  border-color: #94a3b8;
+}
+
+.acc-num input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Hide spin buttons for type="number" inputs */
+.acc-num input[type="number"]::-webkit-outer-spin-button,
+.acc-num input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Container card */
+.display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 480px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual data rows */
+.display p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.display p:last-child {
+  border-bottom: none;
+}
+
+/* Highlight the balance row */
+.display p:last-child {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+
+
+/* Container card */
+.display {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 480px;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual data rows */
+.display p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+/* Highlight the last data row (Balance) */
+.display p:nth-of-type(3) {
+  font-weight: 600;
+  color: #0f172a;
+  border-bottom: none;
+}
+
+/* "Set Value" Action Button */
+#set-value {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#set-value:hover {
+  background-color: #1e293b;
+}
+
+#set-value:active {
+  transform: scale(0.98);
+}
+
+#submit{
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #02a322;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#submit:hover {
+  background-color: #01712c;
+}
+
+#submit:active {
+  transform: scale(0.98);
+}
+
+.display .font-bold{
+  color: white;
+  background: #1a3e47;
+  padding: 4px 10px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+#add-beneficiary{
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #023da3;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#add-beneficiary:hover {
+  background-color: #012d7a;
+}
+
+#add-beneficiary:active {
+  transform: scale(0.98);
+}
+
+
+#remove-beneficiary{
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background-color: #b70404;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#remove-beneficiary:hover {
+  background-color: #8b0202;
+}
+
+#remove-beneficiary:active {
+  transform: scale(0.98);
+}

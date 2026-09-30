@@ -1,0 +1,116 @@
+
+<h3>[class]: Change CSS Class</h3>
+<p [class.active]="accountStatus === 'ACTIVE'">
+    {{ accountStatus }}
+</p>
+
+<p [class.active]="accountStatus2 === 'ACTIVE'">
+  {{ accountStatus2 }}
+</p>
+
+<div [ngClass]="colorClass">NgClass</div>
+
+<br>
+<hr>
+
+<h3>[style] — Change CSS Style</h3>
+<p [style.font-size.px]="20">
+    Balance: ${{ balance }}
+</p>
+
+<p [style.font-weight]="balance > 0 ? 'bold' : 'normal'">
+    Balance: ${{ balance }}
+</p>
+
+<div [ngStyle]="{'background-color': backgroundColor}">NgStyle</div>
+
+<br>
+<hr>
+
+<h3>[NgModel] — Two-Way Data Binding</h3>
+<input type="text" [(ngModel)]="accountNumber" placeholder="Enter Accont number" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm text-slate-900 placeholder-slate-400 shadow-sm transition duration-300 ease-in-out hover:border-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 mt-5">
+<p>Account number: {{accountNumber}}</p>
+
+<br>
+<hr>
+
+<h3>@ if: Conditional Display</h3>
+<!-- Show this HTML only when this condition is true." -->
+ @if (accountStatus === 'ACTIVE') {
+   <button class="px-4 py-2 bg-blue-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition duration-200 ease-in-out shadow-sm">Deposit</button><br>
+   <button class="px-4 py-2 mt-2 bg-blue-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition duration-200 ease-in-out shadow-sm">Withdraw</button><br>
+  }
+
+  @if (accountStatus === 'ACTIVE') {
+    <p class="mt-5">Account is active.</p>
+  } @else {
+    <p class="mt-5">Account cannot make transactions.</p>
+  }
+
+  <br>
+  <hr>
+
+  <br>
+  <h3>@ for:  Repeat Content</h3>
+  <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+    @for (account of accounts; track account.accountNumber) {
+      <p class="text-sm font-mono font-medium text-gray-900">
+          {{ account.accountNumber }}
+      </p>
+    } @empty {
+      <p>No acounts found.</p>
+    }
+  </div>
+
+  <br>
+  <hr>
+
+  <h3>Combining @ for and @ if</h3>
+  <div class="forWithif">
+    @for (account of accounts; track account.accountNumber) {
+      <div class="card">
+          <h3 id="accountNumber">{{ account.accountNumber }}</h3>
+          <p id="balance">Balance: ${{ account.balance }}</p>
+          <p id="status">Status: {{ account.status }}</p>
+          @if (account.status === 'ACTIVE') {
+              <button id="deposit">Deposit</button>
+              <button id="withdraw">Withdraw</button>
+          }
+          @if (account.status === 'BLOCKED') {
+              <p id="isTransaction">Transactions are disabled.</p>
+          }
+      </div>
+    } @empty {
+        <p>No acounts found.</p>
+      }
+  </div>
+
+
+  <br>
+  <hr>
+
+  <h3>@Switch</h3>
+  @switch (accountStatus) {
+
+  @case ('ACTIVE') {
+    <p>Account is active.</p>
+  }
+
+  @case ('BLOCKED') {
+    <p>Account is blocked.</p>
+  }
+
+  @case ('CLOSED') {
+    <p>Account is closed.</p>
+  }
+
+  @default {
+    <p>Unknown status.</p>
+  }
+
+}
+
+  <br>
+  <hr>
+
+

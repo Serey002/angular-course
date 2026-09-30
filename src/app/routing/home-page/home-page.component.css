@@ -1,0 +1,65 @@
+/* Container Stack Layout */
+div:has(> div > a) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Account Card Item */
+div:has(> a) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+div:has(> a):hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+/* Account Number (First Span) */
+div:has(> a) > span:first-of-type {
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Balance Text (Second Span) */
+div:has(> a) > span:nth-of-type(2) {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #059669;
+  margin-left: auto;
+  margin-right: 1.25rem;
+}
+
+/* Router Link Button */
+div:has(> a) > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4f46e5;
+  background-color: #eef2ff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+div:has(> a) > a:hover {
+  background-color: #4f46e5;
+  color: #ffffff;
+}

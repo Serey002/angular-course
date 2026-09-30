@@ -1,0 +1,42 @@
+<div>
+  <h1 class="font-bold"> Build-in Attribute Directive ngClass (Dynamic classes)</h1>
+  <div [ngClass]="colorClassName()">
+    <h3>Color: {{colorClassName()}}</h3>
+  </div>
+  <br>
+
+  <h1 class="font-bold">Custom Attribute Directive ngClass (Dynamic classes)</h1>
+  <div [appBgClass]="colorClassName()">
+    <h3>Color: {{ colorClassName() }}</h3>
+  </div>
+
+  <div>
+      <button (click)="setBgClass('bg-green-600 text-white')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Green</button>
+      <button (click)="setBgClass('bg-blue-600 text-white')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-3">Blue</button>
+  </div>
+  <br>
+  <hr>
+
+  <h1 class="font-bold"> Build-in Attribute Directive ngStyle (Dynamic CSS)</h1>
+  <div [ngStyle]="{'background-color': isColoeGreen == true? 'blue' : 'red' }">
+    <h3>Color</h3>
+  </div>
+  <br>
+
+  <h1 class="font-bold"> Custom Attribute Directive ngStyle (Dynamic CSS)</h1>
+  <div [appBgColor]="isColoeGreen ? 'blue' : 'red'">
+    <h3>Color</h3>
+  </div>
+
+  <div>
+      <button (click)="toggleColor()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Toggle BG Color</button>
+  </div>
+  <br>
+
+  <input [(ngModel)]="accountNumber"  class="w-full px-3 py-2 bg-white text-slate-900 placeholder-slate-400 border border-slate-300 rounded-md shadow-sm transition duration-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:border-slate-400" placeholder="Input">
+  <p class="font-bold">NgModel Attribute Directive: {{accountNumber}}</p>
+  <br>
+</div>
+
+<br>
+

@@ -1,0 +1,32 @@
+<!-- <input type="text" [(ngModel)]="customerName.value" placeholder="Enter">
+<p>{{customerName.value}}</p> -->
+
+<div class="bank-acc">
+  <div class="acc-num">
+    <label for="">Account Number</label>
+    <input type="number" [formControl]="accountNumber">
+  </div>
+
+  <div class="acc-num">
+    <label for="">Account Name</label>
+    <input type="text" [formControl]="accountName">
+  </div>
+  
+  <div class="acc-num">
+    <label for="account number">Balance</label>
+    <input type="number" [formControl]="balance">
+  </div>
+</div>
+
+<div class="display">
+  <p class="font-bold">Get value for functon</p>
+  <p>Account Name: {{ accountName.value }}</p>
+  <p>Account Number: {{ accountNumber.value }}</p>
+  <p>Balance: {{ balance.value }}</p>
+  <div>
+    <button id="set-value" (click)="fillData()">Fill Data</button>
+  </div>
+</div>
+<br>
+
+
